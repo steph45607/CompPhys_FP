@@ -1,4 +1,4 @@
-<h1 align="center"> align=ceCompPhys_FP </h1>
+<h1 align="center"> CompPhys_FP </h1>
 
 ## Best Solar System (Gravity) Simulator
 
