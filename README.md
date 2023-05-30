@@ -13,10 +13,11 @@ To install this project use the command below in your preferred terminal
 
 `git clone https://github.com/steph45607/CompPhys_FP.git`
 
-To execute this project, run [a link](https://github.com/steph45607/CompPhys_FP/blob/main/main.py)
+To execute this project, run [main.py](https://github.com/steph45607/CompPhys_FP/blob/main/main.py)
 
-Computational Physics Final Project - Arish, Alvin, Steph, Wilbert
+### Contributors
 
-```
-
-```
+- Arish Madataly - 2502049706
+- Edward Alvin Koesmanto - 2501963141
+- Stephanie Staniswinata - 2501997836
+- Wilbert Wirawan Ichwan - 2501963186
