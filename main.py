@@ -21,7 +21,7 @@ class Window():
         self.win.title("Solar System Simulator")
         self.win.geometry("900x900")
 
-        self.mass = 10
+        self.mass = 0
         self.x_pos = 0
         self.y_pos = 0
         self.z_pos = 0
@@ -70,7 +70,7 @@ class Window():
         self.x_vel = float(self.xvel_entry.get())
         self.y_vel = float(self.yvel_entry.get())
         self.z_vel = float(self.zvel_entry.get())
-        solarsys = Solar(400, projection_2d=True)
+        # solarsys = Solar(400, projection_2d=True)
 
         planets.append(Planet(solarsys,mass=self.mass, position=(self.x_pos, self.y_pos, self.z_pos),velocity=(self.x_vel,self.y_vel,self.z_vel)))
         while True:
