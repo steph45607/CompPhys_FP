@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from matplotlib.widgets import TextBox
 from tkinter import *
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 # import pygame_gui
 # import pygame
@@ -13,6 +13,7 @@ solarsys = Solar(400, projection_2d=True)
 
 sun = Sun(solarsys)
 planets = []
+# planets = [Planet(solarsys,mass=10, position=(100,150,0),velocity=(0,-5,5))]
 
 class Window():
     def __init__(self,win):
@@ -59,7 +60,6 @@ class Window():
         button1 = Button(self.win, text="update", command = self.update_values)
         button1.grid(row=7, column=0)
         self.win.bind("<Return>", self.update_values)
-        self.plot_values()
         pass
 
     def update_values(self, event=None):
@@ -70,27 +70,40 @@ class Window():
         self.x_vel = float(self.xvel_entry.get())
         self.y_vel = float(self.yvel_entry.get())
         self.z_vel = float(self.zvel_entry.get())
-        self.plot_values()
-        self.win.destroy()
-        return None
+        solarsys = Solar(400, projection_2d=True)
 
-    def plot_values(self):
         planets.append(Planet(solarsys,mass=self.mass, position=(self.x_pos, self.y_pos, self.z_pos),velocity=(self.x_vel,self.y_vel,self.z_vel)))
-        print(planets)
-
+        while True:
+            solarsys.update_all()
+            solarsys.draw_all()
+            solarsys.calculate_all_body_interactions()
+            # solarsys.close()
+        # self.win.destroy()
         return None
 
-    pass
+    # def plot_values(self):
+    #     planets.append(Planet(solarsys,mass=self.mass, position=(self.x_pos, self.y_pos, self.z_pos),velocity=(self.x_vel,self.y_vel,self.z_vel)))
+    #     print(planets)
+    #     solarsys.update_all()
+    #     solarsys.draw_all()
+        
+    #     # solarsys.calculate_all_body_interactions()
+    #     # chart = FigureCanvasTkAgg(solarsys, self.win)
+    #     # chart.get_tk_widget().grid(row=8,column=0)
+
+    #     return None
+
+    # pass
 
 
 win = Tk()
 gui = Window(win)
 gui.win.mainloop()
-while True:
-    solarsys.calculate_all_body_interactions()
-    solarsys.update_all()
-    solarsys.draw_all()
-    solarsys.close()
+# while True:
+#     solarsys.calculate_all_body_interactions()
+#     solarsys.update_all()
+#     solarsys.draw_all()
+#     solarsys.close()
 
 
 # n = int(input("How many planets do you want to add? "))
