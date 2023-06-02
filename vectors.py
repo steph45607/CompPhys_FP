@@ -74,14 +74,14 @@ class Vector:
         )
     
 
-test1 = Vector(7,3,8) + Vector(5,2,1)
-print(test1[0])
-print(repr(test1))
+# test1 = Vector(7,3,8) + Vector(5,2,1)
+# print(test1[0])
+# print(repr(test1))
 
-test2 = Vector(2,7) - Vector(1,4)
-print(test2)
-print(repr(test2))
+# test2 = Vector(2,7) - Vector(1,4)
+# print(test2)
+# print(repr(test2))
 
-test3 = Vector(y=3, z=9)
-print(test3)
-print(repr(test3))
+# test3 = Vector(y=3, z=9)
+# print(test3)
+# print(repr(test3))
