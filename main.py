@@ -73,6 +73,9 @@ class Window():
             solarsys.draw_all()
             solarsys.calculate_all_body_interactions()
 
-win = Tk()
-gui = Window(win)
-gui.win.mainloop()
+def main():
+    win = Tk()
+    gui = Window(win)
+    gui.win.mainloop()
+
+main()
