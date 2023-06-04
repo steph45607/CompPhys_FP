@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from matplotlib.widgets import TextBox
 from tkinter import *
 
 from solar import Solar,Sun,Planet
@@ -64,8 +63,8 @@ class Window():
         self.x_vel = float(self.xvel_entry.get())
         self.y_vel = float(self.yvel_entry.get())
         self.z_vel = float(self.zvel_entry.get())
-        # solarsys = Solar(400, projection_2d=True)
 
+        #// appending user input into the solar system sim
         planets.append(Planet(solarsys,mass=self.mass, position=(self.x_pos, self.y_pos, self.z_pos),velocity=(self.x_vel,self.y_vel,self.z_vel)))
 
         while True:

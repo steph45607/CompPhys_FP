@@ -62,11 +62,14 @@ class Vector:
         else:
             raise TypeError("Must be int or float")
         
+    #// √((x^2) + (y^2) + (z^2))
     def get_magnitude(self):
+        #// getting the magnitude/distance of the vectors
         return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
     
     def normalize(self):
         magnitude = self.get_magnitude()
+        #// dividing the vector with its magnitude
         return Vector(
             self.x / magnitude,
             self.y / magnitude,

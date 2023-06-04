@@ -23,9 +23,11 @@ class Solar:
         else:
             self.ax.view_init(0, 0)
 
+    #* function to add a body/planet
     def add_body(self, body):
         self.bodies.append(body)
 
+    #* function to update everything
     def update_all(self):
         self.bodies.sort(key=lambda item: item.position[0])
         for body in self.bodies:
@@ -33,7 +35,9 @@ class Solar:
             body.draw()
             body.draw_orbit()
 
+    #* function to create graph
     def draw_all(self):
+        #// setting limits to graph
         self.ax.set_xlim((-self.size / 2, self.size / 2))
         self.ax.set_ylim((-self.size / 2, self.size / 2))
         self.ax.set_zlim((-self.size / 2, self.size / 2))
@@ -46,10 +50,12 @@ class Solar:
         plt.pause(0.001)
         self.ax.clear()
 
+    #* function to display physics
     def calculate_all_body_interactions(self):
         bodies_copy = self.bodies.copy()
         for idx, first in enumerate(bodies_copy):
             for second in bodies_copy[idx + 1:]:
+                #// showing acceleration due to gravity
                 first.accelerate_due_to_gravity(second)
 
 class SolarSystemBody:
@@ -69,14 +75,18 @@ class SolarSystemBody:
         self.colour = "black"
         self.solar_system.add_body(self)
 
+    #* function to make planets move
     def move(self):
+        #// making the planets move
         self.position = (
             self.position[0] + self.velocity[0],
             self.position[1] + self.velocity[1],
             self.position[2] + self.velocity[2]
         )
     
+    #* function to make orbital trace
     def draw_orbit(self):
+        #// plotting the distance trace from the sun to individual planets
         self.solar_system.ax.plot(
             [self.position[0],self.velocity[0]],
             [self.position[1],self.velocity[1]],
@@ -84,13 +94,16 @@ class SolarSystemBody:
             color = (.5,.5,.5)
         )
 
+    #* function to plot the planets
     def draw(self):
+        #// plotting the planets
         self.solar_system.ax.plot(
             *self.position,
             markersize=self.display_size + self.position[0] / 30,
             marker="o",
             color=self.colour
         )
+        #// plotting the shadows
         if self.solar_system.projection_2d:
             self.solar_system.ax.plot(
                 self.position[0],
@@ -101,28 +114,41 @@ class SolarSystemBody:
                 color=(.5, .5, .5),
             )
 
+    #* function to simulate physics
     def accelerate_due_to_gravity(self, other):
+        #// getting the distance of the planets with other planets/sun
         distance = Vector(*other.position) - Vector(*self.position)
         distance_mag = distance.get_magnitude()
 
+        #// force = work / distance
+        #// work = mass of planet
+        #// magnitude of force = mass of planets (multiplied) / (distance ^ 2)
         force_mag = self.mass * other.mass / (distance_mag ** 2)
         force = distance.normalize() * force_mag
 
         reverse = 1
+
         for body in self, other:
+            #// increasing the velocity when planets get close
+            #// f = ma 
+            #// a = f / m
             acceleration = force / body.mass
             body.velocity += acceleration * reverse
+            #// changing the direction of the planet when completing a full rotation due to gravity
             reverse = -1
 
+#* The sun class
 class Sun(SolarSystemBody):
     def __init__(
         self, solar_system, mass= 10500, position=(0, 0, 0),velocity=(0, 0, 0)):
         super(Sun, self).__init__(solar_system, mass, position, velocity)
         self.colour = "yellow"
 
+#* The planet class
 class Planet(SolarSystemBody):
-    colours = itertools.cycle([(1, 0, 0), (0, 0, 1), (0, 1, 1)])
+    #// iterating through the colors
+    colors = itertools.cycle([(1, 0, 0), (0, 0, 1), (0, 1, 1)])
 
     def __init__(self, solar_system, mass=10, position=(0, 0, 0), velocity=(0, 0, 0)):
         super(Planet, self).__init__(solar_system, mass, position, velocity)
-        self.colour = next(Planet.colours)
+        self.colour = next(Planet.colors)
