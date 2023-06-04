@@ -82,8 +82,11 @@ class Window():
             solarsys.calculate_all_body_interactions()
 
 def main():
+    #// initializing tkinter
     win = Tk()
+    #// making window for input
     gui = Window(win)
+    #// looping the window
     gui.win.mainloop()
 
 main()
