@@ -15,6 +15,12 @@ To install this project use the command below in your preferred terminal
 
 To execute this project, run [main.py](https://github.com/steph45607/CompPhys_FP/blob/main/main.py)
 
+### Screenshots
+
+![userinput](https://github.com/steph45607/CompPhys_FP/blob/main/Docs/userinput.png)
+![enteredvar](https://github.com/steph45607/CompPhys_FP/blob/main/Docs/variablesentered.png)
+![1planet](https://github.com/steph45607/CompPhys_FP/blob/main/Docs/graph1planet.png)
+
 ### Contributors
 
 - Arish Madataly - 2502049706
