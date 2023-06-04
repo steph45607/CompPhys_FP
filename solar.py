@@ -16,7 +16,6 @@ class Solar:
             figsize = (self.size / 50, self.size / 50)
             
         )
-        # self.ax.set_facecolor("black")
         self.fig.tight_layout()
         if self.projection_2d:
             self.ax.view_init(10, 0)

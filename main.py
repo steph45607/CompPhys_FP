@@ -22,34 +22,42 @@ class Window():
         self.y_vel = 0
         self.z_vel = 0
 
+        #// label for mass
         Label(self.win, text="Mass").grid(row=0,column=0)
         self.mass_entry = Entry(self.win, width = 5)
         self.mass_entry.grid(row=0, column=1)
 
+        #// label for x-position
         Label(self.win, text="x-position").grid(row=1,column=0)
         self.xpos_entry = Entry(self.win, width = 5)
         self.xpos_entry.grid(row=1, column=1)
         
+        #// label for y-position
         Label(self.win, text="y-position").grid(row=2,column=0)
         self.ypos_entry = Entry(self.win, width = 5)
         self.ypos_entry.grid(row=2, column=1)
 
+        #// label for z-position
         Label(self.win, text="z-position").grid(row=3,column=0)
         self.zpos_entry = Entry(self.win, width = 5)
         self.zpos_entry.grid(row=3, column=1)
 
+        #// label for x-velocity
         Label(self.win, text="x-velocity").grid(row=4,column=0)
         self.xvel_entry = Entry(self.win, width = 5)
         self.xvel_entry.grid(row=4, column=1)
 
+        #// label for y-velocity
         Label(self.win, text="y-velocity").grid(row=5,column=0)
         self.yvel_entry = Entry(self.win, width = 5)
         self.yvel_entry.grid(row=5, column=1)
 
+        #// label for z-velocity
         Label(self.win, text="z-velocity").grid(row=6,column=0)
         self.zvel_entry = Entry(self.win, width = 5)
         self.zvel_entry.grid(row=6, column=1)
 
+        #// button to update the graph
         button1 = Button(self.win, text="update", command = self.update_values)
         button1.grid(row=7, column=0)
         self.win.bind("<Return>", self.update_values)
@@ -67,6 +75,7 @@ class Window():
         #// appending user input into the solar system sim
         planets.append(Planet(solarsys,mass=self.mass, position=(self.x_pos, self.y_pos, self.z_pos),velocity=(self.x_vel,self.y_vel,self.z_vel)))
 
+        #// altering the graph with new user inputs and keep the planets rotating
         while True:
             solarsys.update_all()
             solarsys.draw_all()
