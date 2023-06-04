@@ -73,7 +73,7 @@ class SolarSystemBody:
         )
         self.colour = "black"
         self.solar_system.add_body(self)
-
+        
     #* function to make planets move
     def move(self):
         #// making the planets move

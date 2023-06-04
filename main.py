@@ -12,7 +12,7 @@ class Window():
     def __init__(self,win):
         self.win = win
         self.win.title("Solar System Simulator")
-        self.win.geometry("900x900")
+        self.win.geometry("300x300")
 
         self.mass = 0
         self.x_pos = 0
