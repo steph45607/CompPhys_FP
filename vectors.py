@@ -1,5 +1,6 @@
 import math
 
+#? Class to make the base vector for velocity and position
 class Vector:
     def __init__(self, x=0, y=0, z=0):
         self.x = x

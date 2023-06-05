@@ -3,6 +3,7 @@ import math
 import matplotlib.pyplot as plt
 from vectors import Vector
 
+#? Class containing the solar system
 class Solar:
     def __init__(self, size, projection_2d=False):
         self.size = size
@@ -57,6 +58,7 @@ class Solar:
                 #// showing acceleration due to gravity
                 first.accelerate_due_to_gravity(second)
 
+#? Class containing the movements of planets
 class SolarSystemBody:
     min_display_size = 4
     display_log_base = 2
@@ -136,14 +138,14 @@ class SolarSystemBody:
             #// changing the direction of the planet when completing a full rotation due to gravity
             reverse = -1
 
-#* The sun class
+#? The sun class
 class Sun(SolarSystemBody):
     def __init__(
         self, solar_system, mass= 10500, position=(0, 0, 0),velocity=(0, 0, 0)):
         super(Sun, self).__init__(solar_system, mass, position, velocity)
         self.colour = "yellow"
 
-#* The planet class
+#? The planet class
 class Planet(SolarSystemBody):
     #// iterating through the colors
     colors = itertools.cycle([(1, 0, 0), (0, 0, 1), (0, 1, 1)])

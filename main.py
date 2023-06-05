@@ -8,6 +8,7 @@ solarsys = Solar(400, projection_2d=True)
 sun = Sun(solarsys)
 planets = []
 
+#? Class for user input window 
 class Window():
     def __init__(self,win):
         self.win = win
@@ -81,6 +82,7 @@ class Window():
             solarsys.draw_all()
             solarsys.calculate_all_body_interactions()
 
+#? Driver function
 def main():
     #// initializing tkinter
     win = Tk()
@@ -89,4 +91,5 @@ def main():
     #// looping the window
     gui.win.mainloop()
 
+#? Calling the driver function
 main()
