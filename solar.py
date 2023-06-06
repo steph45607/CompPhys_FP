@@ -121,9 +121,10 @@ class SolarSystemBody:
         distance = Vector(*other.position) - Vector(*self.position)
         distance_mag = distance.get_magnitude()
 
-        #// force = work / distance
-        #// work = mass of planet
-        #// magnitude of force = mass of planets (multiplied) / (distance ^ 2)
+
+
+        #// f = GM1M2/r^2
+        #// G / Gravitational constant is not used because of the limitations of matplotlib
         force_mag = self.mass * other.mass / (distance_mag ** 2)
         force = distance.normalize() * force_mag
 
