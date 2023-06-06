@@ -7,6 +7,13 @@
 This simulator takes user input to place planets in coordinates around the sun. Using real-life physics, we are able to simulate acceleration due to gravity and gravity pull as well as adding an orbital tracer to show the distance between the sun and planets.
 We use Python as our choice of language and uses libraries such as itertools, math and matplotlib.
 
+#### Technology used
+
+- Itertools: For easier iteration for colors.
+- Math: Allows us to use advanced mathematical operations in Python such as sqrt.
+- Matplotlib: Used to make a graph which holds our solar system simulator.
+- Tkinter: Used to make the menu for user input for our solar system simulator.
+
 ### How to install and run
 
 To install this project use the command below in your preferred terminal
