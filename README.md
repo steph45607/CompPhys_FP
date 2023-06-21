@@ -22,6 +22,10 @@ To install this project use the command below in your preferred terminal
 
 To execute this project, run [main.py](https://github.com/steph45607/CompPhys_FP/blob/main/main.py)
 
+`python -u "main.py"`
+or
+`python3 main.py`s
+
 ### Screenshots
 
 ![userinput](https://github.com/steph45607/CompPhys_FP/blob/main/Docs/userinput.png)
