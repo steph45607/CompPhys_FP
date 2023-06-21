@@ -24,7 +24,7 @@ To execute this project, run [main.py](https://github.com/steph45607/CompPhys_FP
 
 `python -u "main.py"`
 or
-`python3 main.py`s
+`python3 main.py`
 
 ### Screenshots
 
