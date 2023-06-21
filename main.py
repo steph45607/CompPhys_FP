@@ -34,7 +34,7 @@ class Window():
         Label(self.win, text="Mass (mass of the planet in ...)", bg=background, fg = fontcolor).grid(row=1,column=0)
         self.mass_entry = Entry(self.win, width = 5)
         self.mass_entry.grid(row=1, column=1)
-        Label(self.win, text="kg", bg=background, fg = fontcolor).grid(row=1,column=2)
+        Label(self.win, text="x 10^30 kg", bg=background, fg = fontcolor).grid(row=1,column=2)
 
         #// label for x-position
         Label(self.win, text="x-position (starting point of the planet from x-axis)", bg=background, fg = fontcolor).grid(row=2,column=0)
