@@ -21,7 +21,7 @@ class Solar:
         if self.projection_2d:
             self.ax.view_init(10, 0)
         else:
-            self.ax.view_init(0, 0)
+            self.ax.view_init(10, 5)
 
     #* function to add a body/planet
     def add_body(self, body):
@@ -84,6 +84,7 @@ class SolarSystemBody:
             self.position[1] + self.velocity[1],
             self.position[2] + self.velocity[2]
         )
+
     
     #* function to make orbital trace
     def draw_orbit(self):
@@ -139,6 +140,8 @@ class SolarSystemBody:
             #// changing the direction of the planet when completing a full rotation due to gravity
             reverse = -1
 
+        print(self.position)
+        
 #? The sun class
 class Sun(SolarSystemBody):
     def __init__(
