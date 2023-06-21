@@ -46,7 +46,7 @@ class Solar:
             self.ax.yaxis.set_ticklabels([])
             self.ax.zaxis.set_ticklabels([])
         else:
-            self.ax.axis(False)
+            self.ax.axis(True)
         plt.pause(0.001)
         self.ax.clear()
 
